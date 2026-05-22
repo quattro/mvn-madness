@@ -229,3 +229,18 @@ python experiments/nielsen_vs_horizontal_lift.py \
   --n-steps 16 32 64 128 \
   --output experiments/output/nielsen_vs_horizontal_lift.csv
 ```
+
+## References
+
+The code in this repository is an implementation and testing harness around the following sources.
+
+- Shimpei Kobayashi, "Geodesics of multivariate normal distributions and a Toda lattice type Lax pair," Physica Scripta 98(11), 2023. DOI: [10.1088/1402-4896/ad0087](https://doi.org/10.1088/1402-4896/ad0087), arXiv: [2304.12575](https://arxiv.org/abs/2304.12575). This is the source for the block-Cholesky/Riemannian-submersion view behind the horizontal-lift endpoint solver.
+- Miquel Calvo and Josep M. Oller, "A distance between multivariate normal distributions based in an embedding into the Siegel group," Journal of Multivariate Analysis 35(2), 223-242, 1990. DOI: [10.1016/0047-259X(90)90026-E](https://doi.org/10.1016/0047-259X(90)90026-E). This is the source for the Calvo-Oller SPD/Siegel embedding and lower-bound perspective used in the Nielsen comparison literature.
+- Miquel Calvo and Josep M. Oller, "An Explicit Solution Of Information Geodesic Equations For The Multivariate Normal Model," Statistics & Risk Modeling 9(1-2), 119-138, 1991. DOI: [10.1524/strm.1991.9.12.119](https://doi.org/10.1524/strm.1991.9.12.119). This is one of the primary sources for the closed-form MVN geodesic initial-value solution implemented in `gaussian_fisher.expmap`.
+- P. Svante Eriksen, "Geodesics connected with the Fisher metric on the multivariate normal manifold," 1987. This is the other primary source commonly cited for the explicit MVN Fisher geodesic initial-value problem.
+- Frank Nielsen, "A Simple Approximation Method for the Fisher-Rao Distance between Multivariate Normal Distributions," Entropy 25(4):654, 2023. DOI: [10.3390/e25040654](https://doi.org/10.3390/e25040654), arXiv: [2302.08175](https://arxiv.org/abs/2302.08175). This is the source for the Nielsen-style discretized approximations using source, natural, and expectation parameter curves with `sqrt(Jeffreys divergence)` segment lengths.
+- Julianna Pinele, Joao E. Strapasson, and Sueli I. R. Costa, "The Fisher-Rao Distance between Multivariate Normal Distributions: Special Cases, Bounds and Applications," Entropy 22(4):404, 2020. DOI: [10.3390/e22040404](https://doi.org/10.3390/e22040404). This survey is useful for the affine invariance, geodesic ODE, special-case closed forms, bounds, and the distinction between initial-value formulas and the harder endpoint distance problem.
+
+## AI Assistance Disclosure
+
+This repository was developed with significant assistance from OpenAI Codex and ChatGPT. The mathematical direction, implementation choices, tests, diagnostics, and documentation were iterated interactively with AI assistance; results should be reviewed and validated as research software rather than treated as an independently verified reference implementation.
