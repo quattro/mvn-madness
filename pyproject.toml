@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gaussian-fisher-geodesics"
+version = "0.1.0"
+description = "Numerical harness for Fisher-Rao geodesics between multivariate normal distributions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "jax>=0.4",
+  "jaxlib>=0.4",
+  "equinox>=0.11",
+  "lineax>=0.0.7",
+  "optimistix>=0.0.7",
+  "diffrax>=0.5",
+  "numpy>=1.26",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "matplotlib>=3.8",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]
