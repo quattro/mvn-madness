@@ -2,6 +2,8 @@
 
 Numerical experiments for Fisher-Rao geodesics between multivariate normal distributions.
 
+For the mathematical background and computational formulation, see [MATH.md](MATH.md).
+
 The package focuses on a reliable harness for testing candidate geodesic formulations. The initial implementation includes:
 
 - affine endpoint normalization and denormalization,
